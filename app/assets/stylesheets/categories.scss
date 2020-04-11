@@ -1,0 +1,189 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.category {
+  max-width: 900px;
+  padding-bottom: 64px!important;
+  padding-top: 0!important;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: var(--mdc-layout-grid-margin-desktop, 24px);
+
+}
+
+.label-title-brand {
+  margin-top: 50px;
+}
+
+.brand-tiles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon-title {
+  height: 150px;
+  width: calc(16.66667% - 24px);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #c8cacc;
+  border-radius: 2px;
+  text-decoration: none;
+  background-color: #fff;
+  margin: 4px;
+  padding: 0;
+  text-align: center;
+  &:hover {
+    background-color: lighten(white, 20);
+    border: 2px solid #c8cacc;
+  }
+  .brand-logo {
+    width: 70%;
+    display: block;
+    border-style: none;
+  }
+}
+
+section {display: block;}
+
+.main-brand {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+  border-top: 1px solid #dedfe0;
+  margin-top: 40px;
+}
+
+.filter-car {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 230px !important;
+  border-right: 1px solid #ebebeb;
+}
+
+section {display: block;}
+
+.listing {
+  position: relative;
+  background-color: #fff;
+
+}
+
+.col-md-12 {
+  float: right;
+  margin-right: -30px;
+}
+
+.cars-listing {
+  position: relative;
+}
+
+.listing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 16px 16px 0;
+  box-sizing: border-box;
+}
+.listing-container>*{
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(33.33333% - 10.66667px);
+  max-width: calc(33.33333% - 10.66667px);
+  margin-bottom: 16px;
+}
+
+article {display: block;}
+
+.car-tile {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  background-color: transparent;
+}
+
+.tile-shell {
+  border: 1px solid #dedfe0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color .5s;
+  z-index: 1;
+  margin-bottom: 15px;
+  height: 350px;
+  &:hover {
+    background-color: lighten(white, 20);
+    border: 2px solid #dedfe0;
+  }
+}
+
+.car-tile-images {
+  position: relative;
+}
+
+.img-car {
+  display: block;
+  width: 100%;
+  border-style: none;
+}
+
+.car-tile-content {
+  padding: 16px;
+  background-color: #fff;
+  p {
+    margin: 0;
+  }
+  hr {
+    border: solid #dedfe0;
+    border-width: 0 0 1px;
+    margin: 0;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
+}
+
+.name-info {
+  color: #1773cf;
+  margin: 0 0 8px;
+  transition: color .35s;
+  font-size: 16px;
+  line-height: 1.5625;
+}
+
+.price-info {
+  display: flex;
+  align-items: center;
+  color: #545b63;
+  line-height: 24px;
+  margin-bottom: 8px;
+  padding-bottom: 0;
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+
+.store-info {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.3333333333;
+  display: block;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 1px;
+}

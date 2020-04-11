@@ -1,28 +1,36 @@
 <header class="header">
-  <div id="navbar">
+  <div class="row header-middle">
     <div class="container">
-      <ul class="nav-account list-inline hidden-xs pull-right">
-        <% if user_signed_in? %>
-        <li class="dropdown">
-          <button class="btn-mini dropdown-toggle" data-toggle="dropdown">
-            <% if current_user.avatar.attached? %>
-              <%= image_tag(current_user.avatar, class: "avatar-user") %>
-            <% else %>
-              <%= image_tag("Avatar Default/default-avatar.png", class: "avatar-user") %>
-            <% end %>
-            <%= current_user.username %>
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><%= link_to 'Profile', "#" %></li>
-            <li"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </li>
-        <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>/
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <% end %>
-      </ul>
+      <div class="row">
+        <div class="logo_part col-md-3">
+          <%= image_tag("logo web.jpg", class: "logo-web") %>
+        </div>
+        <div class="contact_info col-md-9 col-lg-7">
+          <div class="c_info service-time">
+            <i class="fa fa-calendar info-icon"></i>
+            <div class="row">
+              <div class="line_1">Thứ 2 - Chủ nhật</div>
+              <div class="line_2">7:30 - 18:00</div>
+            </div>
+          </div>
+          <div class="c_info tel-email">
+            <i class="fa fa-phone info-icon"></i>
+            <div class="row">
+              <div class="line_1">0123456789</div>
+              <div class="line_2">0123456789</div>
+            </div>
+          </div>
+          <div class="c_info location">
+            <i class="fa fa-map-marker info-icon"></i>
+            <div class="row">
+              <div class="line_1">Lô 19B, số 3-5 Nguyễn Văn Linh</div>
+              <div class="line_2">Long Biên, Hà Nội</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <%= render "layouts/btn_user" %>
   </div>
+  <%= render "layouts/taskbar"%>
 </header>

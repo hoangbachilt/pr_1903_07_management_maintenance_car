@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "categories#index"
 
   devise_for :users
   as :user do
@@ -8,4 +9,7 @@ Rails.application.routes.draw do
     get "signup" => "devise/users#new"
     post "signup" => "devise/users#create"
   end
+
+  resources :categories
+  resources :cars
 end

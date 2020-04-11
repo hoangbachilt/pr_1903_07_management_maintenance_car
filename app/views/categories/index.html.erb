@@ -1,0 +1,12 @@
+<section class="category">
+  <h3 class="label-title-brand">Shop by brand</h3>
+  <div class="brand-tiles">
+    <% @categories.each do |brand| %>
+      <%= link_to brand, class: "icon-title text-centered" do %>
+        <% if brand.logo_brand.attached? %>
+          <%= image_tag(brand.logo_brand, class: "brand-logo") %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</section>
