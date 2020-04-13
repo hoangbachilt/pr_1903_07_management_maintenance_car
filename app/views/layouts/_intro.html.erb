@@ -1,0 +1,31 @@
+<div>
+  <section class="row banner-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-xs-12">
+          <div class="section-title">
+            <h1>Title</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="row under-intro-area">
+    <div class="container">
+      <ol class="under-intro">
+        <li>
+          <span>
+            <%= link_to "HOME", root_path, class: "under-intro-root" %>
+          </span>
+          <% request_url(request.original_url).each do |request| %>
+            <% unless is_number? request %>
+              <span>
+                > <%= request.to_s %>
+              </span>
+            <% end %>
+          <% end %>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

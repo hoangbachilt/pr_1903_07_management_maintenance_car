@@ -1,0 +1,28 @@
+<div class="main-brand">
+  <div class="filter-car col-md-3"><h1>Search car</h1></div>
+  <section class="listing col-md-12">
+    <div class="cars-listing">
+      <div class="listing-container">
+        <% @cars.each do |car| %>
+          <article class="car-tile">
+            <%= link_to "#", class: "car-list" do %>
+            <div class="tile-shell">
+              <div class="car-tile-images">
+                <% if car.logo_car.attached? %>
+                  <%= image_tag(car.logo_car, class: "img-car") %>
+                <% end %>
+              </div>
+              <div class="car-tile-content">
+                <h3 class="name-info"><span><%= car.name %></span></h3>
+                <p class="price-info"><span><%= car.price %></span></p>
+                <hr>
+                <p class="store-info"><span>Cua hang Hoang Bach</span></p>
+              </div>
+            </div>
+            <% end %>
+          </article>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
