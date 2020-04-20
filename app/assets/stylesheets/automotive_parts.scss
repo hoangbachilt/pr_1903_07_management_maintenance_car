@@ -1,0 +1,98 @@
+// Place all the styles related to the automotive_parts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.amount-product {
+  margin-top: 15px;
+  float: left;
+  font-size: 25px;
+  color: #898989; 
+}
+
+.products {
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.automotive-part {
+  clear: both;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  text-align: center;
+  width: 25%;
+  clear: initial;
+  margin: 0;
+  list-style: none;
+  border: 1;
+}
+
+.automotive-part-details {
+  text-decoration: none;
+  outline: none;
+  color: #898989;
+  background-color: transparent;
+}
+
+.logo-automotive-part {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  box-shadow: none;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+
+.automotive-part-info {
+  padding: .5em 0;
+  margin: 0;
+  text-transform: none;
+  color: #1f1f34;
+  font: 700 22px/30px "Helvetica",serif!important;
+  letter-spacing: 0;
+  padding-top: 25px!important;
+  margin-bottom: 0!important;
+}
+
+.part-name {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button-details {
+  font: 700 14px/36px "Open Sans",sans-serif;
+    color: #fff;
+    border-radius: 3px;
+    text-transform: uppercase;
+    padding: 0 23px;
+    background: #4c82f1;
+    border-color: #4c82f1;
+    transition: all 0.6s linear;
+    display: inline-block;
+    margin-top: 0;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    left: auto;
+    border: 0;
+    white-space: nowrap;
+    -webkit-box-shadow: none;
+    text-shadow: none;
+}

@@ -5,6 +5,8 @@
       <%= link_to brand, class: "icon-title text-centered" do %>
         <% if brand.logo_brand.attached? %>
           <%= image_tag(brand.logo_brand, class: "brand-logo") %>
+        <% else %>
+          <%= image_tag("Brand/#{brand.name}.png", class: "brand-logo") %>
         <% end %>
       <% end %>
     <% end %>

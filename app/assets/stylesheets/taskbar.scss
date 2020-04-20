@@ -88,3 +88,27 @@ ul {
   font-size: 35px !important;
   color: #fff;
 }
+
+.menu-items {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.menu-item:hover .sub-menu {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.option-menu {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sub-menu {
+  margin-top: 20px !important;
+  font-size: 16px;
+  width: 200px;
+}
