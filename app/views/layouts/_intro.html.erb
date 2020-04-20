@@ -15,15 +15,9 @@
       <ol class="under-intro">
         <li>
           <span>
-            <%= link_to "HOME", root_path, class: "under-intro-root" %>
+            <%= link_to "HOME > ", root_path, class: "under-intro-root" %>
           </span>
-          <% request_url(request.original_url).each do |request| %>
-            <% unless is_number? request %>
-              <span>
-                > <%= request.to_s %>
-              </span>
-            <% end %>
-          <% end %>
+          <span><%= render_breadcrumbs separator: " > " %></span>
         </li>
       </ol>
     </div>

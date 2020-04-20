@@ -4,12 +4,26 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" id="Primary">
           <li class="home-page">
-            <%= link_to "#", class: "a-home" do %>
+            <%= link_to root_path, class: "a-home" do %>
               <i class="fa fa-home icon-home" aria-hidden="true""></i>
             <% end %>
           </li>
+          <li class="menu-items">
+            <div class="menu-item" data-toggle="dropdown">
+              <%= link_to automotive_parts_path do %>
+                <span class="option-menu">SHOP</span>
+                <span class="caret"></span>
+              <% end %>
+            </div>
+            <ul class="sub-menu dropdown-menu" role="menu">
+              <% titles(@automotive_parts).each do |title| %>
+                <li class="sub-menu-item">
+                  <%= link_to("#{title}", titles_path(:title => "#{title}")) %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
         </ul>
-        
       </div>
     </nav>
   </div>
