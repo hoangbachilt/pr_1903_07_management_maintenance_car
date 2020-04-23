@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :cars
   resources :automotive_parts
   resources :titles
+  resources :service_packs
 end
