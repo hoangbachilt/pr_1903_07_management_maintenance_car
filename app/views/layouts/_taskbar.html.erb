@@ -16,7 +16,22 @@
               <% end %>
             </div>
             <ul class="sub-menu dropdown-menu" role="menu">
-              <% titles(@automotive_parts).each do |title| %>
+              <% @title_automotive.each do |title| %>
+                <li class="sub-menu-item">
+                  <%= link_to("#{title}", titles_path(:title => "#{title}")) %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+          <li class="menu-items">
+            <div class="menu-item" data-toggle="dropdown">
+              <%= link_to service_packs_path do %>
+                <span class="option-menu">SERVICE PACK</span>
+                <span class="caret"></span>
+              <% end %>
+            </div>
+            <ul class="sub-menu dropdown-menu" role="menu">
+              <% @title_service.each do |title| %>
                 <li class="sub-menu-item">
                   <%= link_to("#{title}", titles_path(:title => "#{title}")) %>
                 </li>

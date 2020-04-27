@@ -5,8 +5,8 @@ class CarsController < ApplicationController
   end
 
   def show
-    unless Car.find_by(id: params[:id])
-      @car = Car.find_by(id: params[:id])
+    @car = Car.find_by(id: params[:id])
+    unless @car
       flash[:alert] = "Car not exist"
       redirect_to cars_path
     end

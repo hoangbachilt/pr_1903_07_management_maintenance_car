@@ -1,0 +1,21 @@
+<p class="amount-product">Showing <%= @automotive_part_by_title.length %> results</p>
+<div class="columns-4">
+  <div class="row">
+    <ul class="products columns-4">
+      <% @automotive_part_by_title.each do |automotive_part| %>
+        <li class="automotive-part">
+          <%= link_to "#", class: "automotive-part-details" do %>
+            <% if automotive_part.logo_automotive_part.attached? %>
+              <%= image_tag(automotive_part.logo_automotive_part, class: "logo-automotive-part") %>
+            <% end %>
+          <h2 class="automotive-part-info">
+            <p class="part-name"><%= automotive_part.name %></p>
+            <p><%= automotive_part.price %></p>
+          </h2>
+          <%= link_to("Doc tiep", "#", class: "button-details") %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
