@@ -1,0 +1,34 @@
+<h2>Register Advisory</h2>
+<div class="row">
+  <%= form_for @register_advisory do |f| %>
+    <div class="register-advisory">
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label :username %><br>
+          <% if user_signed_in? %>
+            <%= f.text_field :username, value: current_user.username, readonly: true, class: "form-advisory" %>
+          <% else %>
+            <%= f.text_field :username, class: "form-advisory" %>
+          <% end %>
+        </div>
+        <div class="field">
+          <%= f.label :manufacturer %><br>
+          <%= f.select :manufacturer, Category.all.collect { |c| c.name }, { include_blank: false }, { class: "form-advisory" } %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label :number_phone %><br>
+          <%= f.text_field :number_phone, class: "form-advisory" %>
+        </div>
+        <div class="field">
+          <%= f.label :staff %><br>
+          <%= f.select :staff_id, Staff.all.collect { |s| [ s.staff_name, s.id ] }, { include_blank: false },  { class: "form-advisory" } %>
+        </div>
+      </div>
+    </div>
+    <div class="field-register">
+      <%= f.submit "Register Advisory", class: "btn btn-primary submit-advisory" %>
+    </div>
+  <% end %>
+</div>
