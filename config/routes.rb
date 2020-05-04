@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :automotive_parts
   resources :titles
   resources :service_packs
+  resources :register_advisories
 end
