@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_150048) do
+ActiveRecord::Schema.define(version: 2020_05_05_120804) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,17 +33,24 @@ ActiveRecord::Schema.define(version: 2020_04_28_150048) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "automotive_part_details", force: :cascade do |t|
+    t.integer "service_pack_id"
+    t.integer "automotive_part_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["automotive_part_id"], name: "index_automotive_part_details_on_automotive_part_id"
+    t.index ["service_pack_id"], name: "index_automotive_part_details_on_service_pack_id"
+  end
+
   create_table "automotive_parts", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.float "price"
-    t.integer "service_pack_id"
     t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
     t.index ["car_id"], name: "index_automotive_parts_on_car_id"
-    t.index ["service_pack_id"], name: "index_automotive_parts_on_service_pack_id"
   end
 
   create_table "basic_parameters", force: :cascade do |t|
@@ -129,6 +136,8 @@ ActiveRecord::Schema.define(version: 2020_04_28_150048) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.boolean "status", default: true
+    t.integer "parent_id"
   end
 
   create_table "service_registers", force: :cascade do |t|
@@ -162,6 +171,11 @@ ActiveRecord::Schema.define(version: 2020_04_28_150048) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "car_id"
+  end
+
+  create_table "user_pick_services", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

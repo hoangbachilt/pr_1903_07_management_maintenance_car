@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :titles
   resources :service_packs
   resources :register_advisories
+  resources :schedule_maintenances do 
+    resources :service_registers
+  end
 end

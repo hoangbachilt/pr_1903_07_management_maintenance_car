@@ -1,5 +1,5 @@
 class AutomotivePart < ApplicationRecord
-  belongs_to :service_pack, optional: true
+  has_many :automotive_part_details, dependent: :destroy
   belongs_to :car
   has_one_attached :logo_automotive_part
 

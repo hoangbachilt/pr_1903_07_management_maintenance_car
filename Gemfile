@@ -67,10 +67,12 @@ gem "bootstrap-sass"
 
 gem "jquery-rails"
 
-gem 'font-awesome-sass', '~> 4.2.0'
+gem "font-awesome-sass", "~> 4.2.0"
 
-gem 'will_paginate', '~> 3.1.0'
+gem "will_paginate", "~> 3.1.0"
 
 gem "breadcrumbs_on_rails"
 
 gem "config"
+
+gem "cocoon"

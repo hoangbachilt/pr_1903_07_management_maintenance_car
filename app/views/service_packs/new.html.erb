@@ -1,0 +1,38 @@
+<h2>Chon dich vu</h2>
+<div class="place">
+  <%= form_for @service_pack_picked do |f| %>
+    <div class="field">
+      <%= f.label "Chon dich vu" %>
+      <%= f.select(:parent_id, ServicePack.all.collect {|s| [s.name, s.id] }, { include_blank: false }, { class: "form-control" } ) %> <br>
+    </div>
+    <div id="automotive_parts">
+      <%= f.label "Them phu kien" %>
+      <%= f.fields_for :automotive_part_details do |detail| %>
+        <%= render "automotive_part_detail_fields", :f => detail, service_pack: f %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association f, :automotive_part_details do %><i class="fa fa-plus"></i><% end %>
+      </div>
+    </div>
+    <div class="field">
+      <%= label_tag "Ten xe" %>
+      <%= text_field_tag "schedule_maintenance[car_name]", nil, class: "form-control" %> <br>
+    </div>
+    <div class="field">
+      <%= label_tag "Dien thoai" %>
+      <%= text_field_tag "schedule_maintenance[number_phone]", nil, class: "form-control" %> <br>
+    </div>
+    <div class="field">
+      <span class="input-group-addon">
+        <%= label_tag "Dat lich" %>
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+      <%= datetime_field_tag( "schedule_maintenance[date]", Time.zone.now.strftime("%Y-%m-%dT%H:%M"), { class: "date-time" } ) %>
+    </div> <br>
+    <div class="field">
+      <%= label_tag "Chon nhan vien" %> <br>
+      <%= select_tag("schedule_maintenance[staff_id]" , options_for_select( Staff.all.collect { |s| [s.staff_name, s.id] } ), { class: "form-control" } ) %>
+    </div> <br>
+    <%= f.submit "Chon", class: "btn-mini btn-primary" %>
+  <% end %>
+</div>

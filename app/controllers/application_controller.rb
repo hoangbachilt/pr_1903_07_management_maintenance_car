@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
 
   def load_data
     @automotive_parts = AutomotivePart.paginate(page: params[:page], per_page: Settings.per_page)
-    @service_packs = ServicePack.paginate(page: params[:page], per_page: Settings.per_page)
+    @service_packs = ServicePack.services_show(status: true).
+                              paginate(page: params[:page], per_page: Settings.per_page)
     @title_automotive = TitleService.new(AutomotivePart.all).call
     @title_service = TitleService.new(ServicePack.all).call
   end
